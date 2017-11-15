@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,39 +28,45 @@ namespace _20171111_HW
             {
                 case "monday":
                 case "понедельник":
-                    x = 1;
+                    x = MASK_01;
                     break;
                 case "tuesday":
                 case "вторник":
-                    x = 2;
+                    x = MASK_02;
                     break;
                 case "wednesday":
                 case "среда":
-                    x = 3;
+                    x = MASK_04;
                     break;
                 case "thursday":
                 case "четверг":
-                    x = 4;
+                    x = MASK_08;
                     break;
                 case "friday":
                 case "пятница":
-                    x = 5;
+                    x = MASK_10;
                     break;
                 case "saturday":
                 case "суббота":
-                    x = 6;
+                    x = MASK_20;
                     break;
                 case "sunday":
                 case "воскресенье":
-                    x = 7;
+                    x = MASK_40;
                     break;
                 default:
-                    x = 0;
+                    Console.Write("Error");
                     break;
             }
-            Console.Write("number: {0}", x);
-
-
+            if (x & MASK_80)
+            {
+                Console.Write("Today");
+            }
+            else
+            {
+                Console.Write("Not today");
+            }
+            
             Console.ReadKey();
         }
 
