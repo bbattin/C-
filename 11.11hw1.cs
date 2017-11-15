@@ -15,15 +15,14 @@ namespace _20171111_HW
         const byte MASK_10 = 0x10;    // 0001 0000
         const byte MASK_20 = 0x20;    // 0010 0000
         const byte MASK_40 = 0x40;    // 0100 0000
-        const byte MASK_80 = 0x80;    // 1000 0000
-
+        const byte MASK_44 = 0x44;    // 0100 0100
+        // занятия в среду и воскресенье
         static void Main(string[] args)
         {
             Console.Write("day of the week today: ");
             string day = Console.ReadLine();
             day = day.ToLower();
-            Console.WriteLine(day);
-            short x;
+            byte x = 0;
             switch (day)
             {
                 case "monday":
@@ -55,10 +54,10 @@ namespace _20171111_HW
                     x = MASK_40;
                     break;
                 default:
-                    Console.Write("Error");
+                    Console.Write("Error ");
                     break;
             }
-            if (x & MASK_80)
+            if ((x & MASK_44) == x)
             {
                 Console.Write("Today");
             }
