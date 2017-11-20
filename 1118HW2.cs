@@ -69,7 +69,7 @@ namespace _20171118HW2
 
             Console.WriteLine("Thanks, schedule recorded.");
 
-            do
+             do
             {
                 Console.Write("Day of the week number today (end-other char): ");
                 numberDay = Console.ReadLine();
@@ -97,19 +97,29 @@ namespace _20171118HW2
                         day1 = MultyDaysWeek.Sunday;
                         break;
                     default:
-                        day1 = MultyDaysWeek.NoDay;
                         break;
                 }
-                if ((day1 & day2) == day1)
+                if (ushort.TryParse(numberDay, out day) && day > 0 && day < 8)
                 {
-                    Console.WriteLine("Today");
+                    if ((day1 & day2) == day1)
+                    {
+                        Console.WriteLine("Today");
+                    }
+                    else
+                    {
+
+                        Console.WriteLine("Not today");
+
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Not today");
+                    break;
                 }
             }
             while (ushort.TryParse(numberDay, out day) && day > 0 && day < 8);
+
+            Console.Write("Exit");
 
             Console.ReadKey();
 
