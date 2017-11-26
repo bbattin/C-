@@ -71,6 +71,8 @@ namespace _20171126HW10
             Console.WriteLine("Thanks, schedule recorded.");
             return day2;
         }
+        
+        
         public static byte ScheduleEdit(byte day2)
         {
             string numberDay;
@@ -114,6 +116,7 @@ namespace _20171126HW10
             return day2;
         }
 
+        
         public static void Today(byte day2)
         {
             string numberDay;
