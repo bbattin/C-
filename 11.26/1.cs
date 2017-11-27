@@ -20,8 +20,8 @@ namespace _20171126HW10
         {
 
             byte schedR = ScheduleRec();
-            byte schedEd = ScheduleEdit(schedR);
-            Today(schedEd);
+            // byte schedEd = ScheduleEdit(schedR);
+            Today(schedR);
             Console.ReadKey();
 
         }
