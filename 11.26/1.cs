@@ -28,7 +28,7 @@ namespace _20171126HW10
         
         //  функции
         
-        public static byte SwitchWeek(string numberDay)
+        public static byte GetDayOfWeek(string numberDay)
         {  
             byte day = 0;
             switch (numberDay)
@@ -71,7 +71,7 @@ namespace _20171126HW10
                 day2 = (byte)(day1 | day2);
                 Console.Write("Day of the week number (mon-1, tue-2, wed-3, thu-4, fri-5, sat-6, sun-7, end-other char): ");
                 number = Console.ReadLine();
-                day1 = SwitchWeek(number);
+                day1 = GetDayOfWeek(number);
 
 
             } while (ushort.TryParse(numberDay, out day) && day > 0 && day < 8);
@@ -90,7 +90,7 @@ namespace _20171126HW10
                 day2 = (byte)(~day1 | day2);
                 Console.Write("Day of the week number exclude or add (end-other char): ");
                 number = Console.ReadLine();
-                day1 = SwitchWeek(number);
+                day1 = GetDayOfWeek(number);
                 
             }
             while (ushort.TryParse(numberDay, out day) && day > 0 && day < 8);
@@ -107,9 +107,8 @@ namespace _20171126HW10
             do
             {
                 Console.Write("Day of the week number today (end-other char): ");
-                numberDay = Console.ReadLine();
-                switch (number)
-                day1 = SwitchWeek(number);
+                number = Console.ReadLine();
+                day1 = GetDayOfWeek(number);
                 if (ushort.TryParse(numberDay, out day) && day > 0 && day < 8)
                 {
                     if ((day1 & day2) == day1)
