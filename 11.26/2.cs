@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//  вывод геометрических фигур
+
 namespace _20171126HW2
 {
-    //  вывод геометрических фигур
-
     class Program
     {
         static void Main(string[] args)
