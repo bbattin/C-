@@ -4,117 +4,91 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _20171126HW1
+namespace _20171126HW2
 {
+    //  вывод геометрических фигур
+
     class Program
     {
-        const byte Monday = 0x01;    // 0000 0001
-        const byte Tuesday = 0x02;    // 0000 0010
-        const byte Wednesday = 0x04;    // 0000 0100
-        const byte Thursday = 0x08;    // 0000 1000
-        const byte Friday = 0x10;    // 0001 0000
-        const byte Saturday = 0x20;    // 0010 0000
-        const byte Sunday = 0x40;    // 0100 0000
-
         static void Main(string[] args)
         {
+            int oldX = Console.CursorLeft;
+            int oldY = Console.CursorTop;
 
-            byte schedR = ScheduleRec();
-            Today(schedR);
+            int z = 5;
+            int k = 2;
+            Square(z, k);
+            
+            z = 20;
+            k = 2;
+            TriangleBroken(z, k);
+
+            z = 55;
+            k = 2;
+            Triangle(z, k);
+
+            z = 70;
+            k = 2;
+            Trapeze(z, k);
+
+
+            Console.SetCursorPosition(oldX, oldY);
+            Console.ResetColor();
             Console.ReadKey();
-
         }
 
-        //  функции
+        //   functions
 
-        public static byte GetDayOfWeek(string numberDay)
+        public static void Square(int x, int y)
         {
-            byte day = 0;
-            switch (numberDay)
+            for (int i = 0; i < 5; i++)
             {
-                case "1":
-                    day = Monday;
-                    break;
-                case "2":
-                    day = Tuesday;
-                    break;
-                case "3":
-                    day = Wednesday;
-                    break;
-                case "4":
-                    day = Thursday;
-                    break;
-                case "5":
-                    day = Friday;
-                    break;
-                case "6":
-                    day = Saturday;
-                    break;
-                case "7":
-                    day = Sunday;
-                    break;
-                default:
-                    break;
-            }
-            return day;
-        }
-
-        public static byte ScheduleRec()
-        {
-            string number;
-            byte day1 = 0;
-            byte day2 = 0;
-            ushort day = 0;
-            do
-            {
-                day2 = (byte)(day1 | day2);
-                number = WriteDay();
-                day1 = GetDayOfWeek(number);
-
-
-            } while (ushort.TryParse(number, out day) && day > 0 && day < 8);
-            Console.WriteLine("Thanks, schedule recorded.");
-            return day2;
-        }
-
-
-        public static void Today(byte day2)
-        {
-            string number;
-            byte day1 = 0;
-            ushort day = 0;
-            do
-            {
-                number = WriteDay();
-                day1 = GetDayOfWeek(number);
-                if (ushort.TryParse(number, out day) && day > 0 && day < 8)
+                for (int j = 0; j < 9; j++)
                 {
-                    if ((day1 & day2) == day1)
-                    {
-                        Console.WriteLine("Today");
-                    }
-                    else
-                    {
-
-                        Console.WriteLine("Not today");
-
-                    }
-                }
-                else
-                {
-                    break;
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.SetCursorPosition(x + j, y + i);
+                    Console.Write('+');
                 }
             }
-            while (ushort.TryParse(number, out day) && day > 0 && day < 8);
 
-            Console.Write("Exit");
         }
-        public static string WriteDay()
+        public static void TriangleBroken(int x,int y)
         {
-            Console.Write("Day of the week number today (end-other char): ");
-            string n = Console.ReadLine();
-            return n;
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = i * 2 + 1; j > 0; j--)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.SetCursorPosition(x + j * 3, y + i);
+                    Console.Write('*');
+                }
+            }
+
+        }
+        public static void Triangle(int x, int y)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = i * 2 + 1; j > 0; j--)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    Console.SetCursorPosition(x + j, y + i);
+                    Console.Write('*');
+                }
+            }
+        }
+        public static void Trapeze(int x, int y)
+        {
+            for (int i = 4; i >= 0; --i)
+            {
+                for (int j = 11 - i; j > 0; --j)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.SetCursorPosition(x + j, y + i);
+                    Console.Write('*');
+                }
+            }
         }
     }
-
 }
+
