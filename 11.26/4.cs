@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//  вывод двух минимумов и максимумов из 5 чисел, введенных пользователем
+
 namespace _20171126HW4
 {
     class Program
