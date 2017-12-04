@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//  расписание с использованием битовых енамов
+
 namespace _20171126HW9
 {
     class Program
