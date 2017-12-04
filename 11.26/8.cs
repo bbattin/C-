@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//  вывод названия и значения енама по введенным пользователям данных 
+
+
 namespace _20171126HW8
 {
     class Program
