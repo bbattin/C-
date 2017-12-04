@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// вывод числа дня недели по вводу пользователям строки (работа со строками)
+
 namespace _20171126HW5
 {
     class Program
