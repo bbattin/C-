@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//  смена значений 3 переменных между собой без использования 4-й
+
 namespace _20171126HW3
 {
     class Program
