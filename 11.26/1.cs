@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//  расписание с использованием битовых масок
+
 namespace _20171126HW10
 {
-    //  расписание с использованием битовых масок
-    
-    class Program
+   тclass Program
     {
         const byte Monday = 0x01;    // 0000 0001
         const byte Tuesday = 0x02;    // 0000 0010
