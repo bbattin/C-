@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace _20171126HW10
 {
     //  расписание с использованием битовых масок
+    
     class Program
     {
         const byte Monday = 0x01;    // 0000 0001
