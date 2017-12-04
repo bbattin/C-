@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//  подсчет количества нулей и единиц в двоичной версии десятичного числа, введенного пользователем
+
 namespace _20171126HW6
 {
     class Program
