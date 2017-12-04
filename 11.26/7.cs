@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//  умножение с помощью битовых сдвигов
+
 namespace _20171126HW7
 {
     class Program
