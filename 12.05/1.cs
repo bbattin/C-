@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//   использование рекурсивной функции на вывод сначала положительных элементов массива, после остальных
+
 namespace _20171206HW1
 {
 
@@ -13,63 +15,61 @@ namespace _20171206HW1
 
         static void Main(string[] args)
         {
-            int[] arr = new int[10];
+            int[] arr = new int[15];
 
             RandomInitArray(ref arr);
 
+            Console.Write("Entire array: ");
             OutputArray(arr);
-
-            WritePozNumbers(arr);
-
-            //int i = 0;
-
-            //WritePozNumb(arr, i);
+            Console.WriteLine();
+            
+            Console.Write("First positive, after other:: ");
+            int i = 0;
+            WritePozNumb(arr, i);
 
             Console.ReadKey();
 
         }
 
-        public static void RandomInitArray(ref int[] array)   //  цикл для рандома
+        //  цикл для рандома
+        public static void RandomInitArray(ref int[] array)   
         {
-            array = new int[10];
+            array = new int[15];
 
             for (int i = 0; i < array.Length; i++)
             {
-                array[i] = rand.Next(-8, 8);
+                array[i] = rand.Next(-100, 100);
             }
         }
-        public static void WritePozNumbers(int[] array)   //   функция на вывод сначала положительных элементов массива, после остальных
+        
+        //   рекурсивная функция на вывод сначала положительных элементов массива, после остальных
+        private static void WritePozNumb(int[] arr, int i) 
         {
-            for (int i = 0; i < array.Length && array[i] > 0; i++)
+
+            if (i < arr.Length)
             {
-                Console.Write("{0} ", array[i]);
-            }
+                int numb = arr[i];
+                if (numb > 0)
+                {
+                    Console.Write("{0} ", numb);
 
-                     
-            Console.WriteLine();
+                }
 
-            
-        }
+                i++;
+                WritePozNumb(arr, i);
+                
 
-        public static void WritePozNumb(int[] array, int ind) //   рекурсивная функция на вывод сначала положительных элементов массива, после остальных
-        {
-            if (array[ind] > 0 && ind < array.Length)
-            {
-                Console.Write("{0} ", array[ind]);
-                ind++;
-                WritePozNumb(array, ind);
-
-            }
-            else
-            {
-                ind++;
-                WritePozNumb(array, ind);
-
+                if (numb <= 0)
+                {
+                    Console.Write("{0} ", numb);
+                }
             }
             return;
+
         }
 
-        private static void OutputArray(int[] array)           //  цикл вывода массива
+        //  цикл вывода массива
+        private static void OutputArray(int[] array)           
         {
             foreach (int a in array)
                 Console.Write("{0} ", a);
