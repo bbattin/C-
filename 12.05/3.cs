@@ -28,7 +28,6 @@ namespace _20171210HW2._2
         }
 
         //  цикл для рандома
-
         public static void RandomInitArray(ref int[] array)   
         {
             
@@ -39,7 +38,6 @@ namespace _20171210HW2._2
         }
 
         //  цикл вывода массива
-
         private static void OutputArray(int[] array)           
         {
             foreach (int a in array)
@@ -47,7 +45,6 @@ namespace _20171210HW2._2
         }
 
         //  цикл для проверки зеркальности массива относительно центра
-
         public static void SpecularArr(int[] arr)   
         {
             int k = 0;
