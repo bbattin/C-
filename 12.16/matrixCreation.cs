@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// изменение одномерного массива на двухмерный
+
 namespace _20171216HW2
 {
     class Program
     {
 
         static void Main(string[] args)
-        {
+        {       
             // длина массива
             int ArrLen = 0;
 
@@ -61,6 +63,8 @@ namespace _20171216HW2
             Console.WriteLine();
         }
 
+
+
         static public int[,] matrixNxNfromVector(int[] arr)
         {
             // Берем корень из длины масива и округляем вверх к ближайшему целому
@@ -92,7 +96,7 @@ namespace _20171216HW2
             return matrix;
         }
 
-        static public void printMatrix(int[,] matrix)
+        public static void printMatrix(int[,] matrix)
         {
             // длина одного измерения matrix.GetLength(0)
 
@@ -111,6 +115,17 @@ namespace _20171216HW2
             }
 
         }
-       
+        private static void PrintMatr(int[,] matr)
+        {
+            for (int i = 0; i < matr.GetLength(0); i++)
+            {
+                for (int j = 0; j < matr.GetLength(1); j++)
+                {
+                    Console.Write("{0,5}", matr[i, j]);
+                }
+                Console.WriteLine();
+            }
+        }
+
     }
 }
