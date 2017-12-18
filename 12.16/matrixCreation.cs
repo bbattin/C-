@@ -85,7 +85,8 @@ namespace _20171216HW2
             int[,] matrix = new int[n, n];
 
             // индексы элементов в новом массиве (матрице)
-            int k = 0, j = 0;
+            int k = 0, 
+                j = 0;
 
             for (int i = 0; i < arr.Length; i++)
             {
