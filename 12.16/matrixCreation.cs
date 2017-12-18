@@ -10,12 +10,15 @@ namespace _20171216HW2
 {
     class Program
     {
+        static Random rand = new Random();
         static void Main(string[] args)
         {
 
             int arrLen = LengthArr();
 
             int[] vector = initVector(arrLen);
+
+            //int[] vector = RandomInitArray(arrLen);
 
             Console.WriteLine(Environment.NewLine + "Array result: ");
             printVector(vector);
@@ -75,7 +78,7 @@ namespace _20171216HW2
 
         private static int[,] matrixNxNfromVector(int[] arr)
         {
-            // Берем корень из длины масива и округляем вверх к ближайшему целому
+            // берем корень из длины масива и округляем вверх к ближайшему целому
             // для этого приводим длину массива к double а в конце приводим к int
             int n = Convert.ToInt32(Math.Ceiling(Math.Sqrt(Convert.ToDouble(arr.Length))));
 
@@ -136,5 +139,14 @@ namespace _20171216HW2
             }
         }
 
+        public static int[] RandomInitArray(int len)   
+        {
+            int[] arr = new int[len];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = rand.Next(10, 100);
+            }
+            return arr;
+        }
     }
 }
