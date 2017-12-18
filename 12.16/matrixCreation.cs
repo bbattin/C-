@@ -10,8 +10,6 @@ namespace _20171216HW2
 {
     class Program
     {
-        public static object Enviroment { get; private set; }
-
         static void Main(string[] args)
         {
 
