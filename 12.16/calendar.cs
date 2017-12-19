@@ -48,12 +48,12 @@ namespace _20171216HW
                 year[i] = new WeatherCondition[numDays[i]];
                 for (int j = 0; j < year[i].Length; j++)
                 {
-                    iSun = rand.Next(0, 1);
-                    iPrec = rand.Next(0, 3);
-                    iWind = rand.Next(0, 2);
-                    iTemp = rand.Next(0, 5);
+                    iSun = rand.Next(0, Sun.Length);
+                    iPrec = rand.Next(0, Precipitation.Length);
+                    iWind = rand.Next(0, Wind.Length);
+                    iTemp = rand.Next(0, Temperature.Length);
 
-                    year[i][j] = Precipitation[iPrec] | Sun[iSun] | Wind[iWind] | Temperature[iTemp];
+                    year[i][j] = Sun[iSun] | Precipitation[iPrec] |  Wind[iWind] | Temperature[iTemp];
                 }
             }
 
