@@ -51,7 +51,7 @@ namespace _20171216HW
                     iWind = rand.Next(0, 2);
                     iTemp = rand.Next(0, 5);
 
-                    year[i][j] = Precipitation[iPrec] & Sun[iSun] & Wind[iWind] & Temperature[iTemp];
+                    year[i][j] = Precipitation[iPrec] | Sun[iSun] | Wind[iWind] | Temperature[iTemp];
                 }
             }
 
