@@ -15,6 +15,8 @@ namespace _20171216HW
         {
             WeatherCondition[][] year = GetYearWeather();
 
+            Console.WriteLine("Weather for 2018");
+            Console.WriteLine();
             Print(year);
 
             Console.ReadKey();
@@ -65,7 +67,8 @@ namespace _20171216HW
             {
                 for (int j = 0; j < data[i].Length; j++)
                 {
-                    Console.Write("{0,6}", data[i][j]);
+                    Console.Write("Date: {0}.{1} - ",i+1,j+1);
+                    Console.WriteLine("{0,6}", data[i][j]);
                 }
                 Console.WriteLine();
             }
