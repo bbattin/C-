@@ -12,6 +12,7 @@ namespace _20171224HW
         public string spec;
         public Student[] students;  // reference type
 
+
         public Group(string Name, string Spec, Student [] Students)
         {
             this.name = Name;
@@ -19,17 +20,7 @@ namespace _20171224HW
             this.students = Students;
         }
 
-        public static void Add(ref Group gr, Student newStudent)
-        {
-            Array.Resize(ref gr.students, gr.students.Length + 1);
-            gr.students[gr.students.Length - 1] = newStudent;
-        }
-
-        public static void Delete(ref Group gr)
-        {
-            Array.Resize(ref gr.students, gr.students.Length - 1);
-        }
-
+        // полное копирование
         public static Group GetFullCopy(Group source)
         {
             Group grCopy = source;    // копирование полей value types
@@ -39,5 +30,24 @@ namespace _20171224HW
 
             return grCopy;
         }
+
+        // поиск средней оценки по каждому студенту
+        public static int Average(Student s)
+        {
+            int x = 0;
+            int sum = 0;
+            int rezult = 0;
+
+            for (int i = 0; i < s.assess.Length; i++)
+            {
+                x = s.assess[i];
+                sum += x;
+            }
+            rezult = sum / s.assess.Length;
+            return rezult;
+        }
+
+        
+
     }
 }
