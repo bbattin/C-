@@ -22,12 +22,19 @@ namespace _20171224HW
 
             //UI.Print(stud1);
 
-            UI.Print2(group);
+            UI.PrintGroup(group);
 
             //Group groupCopy = group;    // Копировани "по полям"
             Group groupCopy = Group.GetFullCopy(group);    // Копировани полное
 
-            UI.Print2(groupCopy);
+            //UI.PrintGroup(groupCopy);
+
+            int aver1 = Group.Average(stud1);
+            int aver2 = Group.Average(stud2);
+
+            UI.PrintAver(stud1, aver1);
+            UI.PrintAver(stud2, aver2);
+
 
             Console.ReadKey();
         }
