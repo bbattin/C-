@@ -8,7 +8,7 @@ namespace _20171224HW
 {
     class UI
     {
-        public static void Print(Student s)
+        public static void PrintStudent(Student s)
         {
             Console.Write(Environment.NewLine + "Name: {0}, number: {1}, assessments: ", s.name, s.number);
             for (int i = 0; i < s.assess.Length; i++)
@@ -18,15 +18,18 @@ namespace _20171224HW
             
         }
 
-        public static void Print2(Group p)
+        public static void PrintGroup(Group p)
         {
-            Console.Write(Environment.NewLine + "Group name: {0}, cpec: {1}, students: ", p.name, p.spec);
+            Console.WriteLine(Environment.NewLine + "Group name: {0}, cpec: {1}, students: ", p.name, p.spec);
             for (int i = 0; i < p.students.Length; i++)
             {
-                Print(p.students[i]);
+                PrintStudent(p.students[i]);
             }
         }
-
-        
+        public static void PrintAver(Student s, int aver)
+        {
+           Console.WriteLine();
+           Console.Write(Environment.NewLine + "The average scores of students: {0} - {1}", s.name, aver);
+        }
     }
 }
