@@ -39,20 +39,22 @@ namespace _20171224HW
             UI.CaptiontAddStInMain();
             UI.PrintGroup(group);
 
-            int aver1 = Student.Average(stud1);
-            int aver2 = Student.Average(stud2);
-            int aver3 = Student.Average(stud3);
-            int aver4 = Student.Average(stud4);
-            int aver5 = Student.Average(stud5);
+            //int aver1 = Student.AverageOneSt(stud1);
+            //int aver2 = Student.AverageOneSt(stud2);
+            //int aver3 = Student.AverageOneSt(stud3);
+            //int aver4 = Student.AverageOneSt(stud4);
+            //int aver5 = Student.AverageOneSt(stud5);
+
+            Group.PrintAverageStGroup(group);
+
+
+            //UI.PrintAver(stud1, aver1);
+            //UI.PrintAver(stud2, aver2);
+            //UI.PrintAver(stud3, aver3);
+            //UI.PrintAver(stud4, aver4);
+            //UI.PrintAver(stud5, aver5);
 
             int averGr = Group.AverageGroup(group);
-
-            UI.PrintAver(stud1, aver1);
-            UI.PrintAver(stud2, aver2);
-            UI.PrintAver(stud3, aver3);
-            UI.PrintAver(stud4, aver4);
-            UI.PrintAver(stud5, aver5);
-
             UI.PrintAverGr(group, averGr);
 
             int averGrCopy = Group.AverageGroup(groupCopy);
