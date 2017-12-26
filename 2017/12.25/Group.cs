@@ -41,7 +41,21 @@ namespace _20171224HW
             return grCopy;
         }
 
-        // поиск средней оценки по всей группе
+        // поиск средней оценки по каждому студенту в группе и вывод ее с именем студента
+        public static void PrintAverageStGroup(Group g)
+        {
+            int x = 0;
+            
+            for (int i = 0; i < g.students.Length; i++)
+            {
+                x = Student.AverageOneSt(g.students[i]);
+                string n = g.students[i].name;
+                Console.Write(Environment.NewLine + "Average score on the student: {0} - {1}", n, x);
+            }
+           
+        }
+
+        // поиск средней оценки по группе
         public static int AverageGroup(Group g)
         {
             int x = 0;
@@ -51,7 +65,7 @@ namespace _20171224HW
 
             for (int i = 0; i < g.students.Length; i++)
             {
-                x = Student.Average(g.students[i]);
+                x = Student.AverageOneSt(g.students[i]);
                 sum += x;
             }
             rezult = (double)sum / g.students.Length;
