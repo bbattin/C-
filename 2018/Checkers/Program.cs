@@ -31,53 +31,50 @@ namespace Checkers
             int y2 = 8;
             int y1 = 9;
 
+            string black = "+";
+            char blackCh = '\x004F';
+            string white = "-";
+            char whiteCh = '\x2B24';
+
             // первая строка
-            Console.ForegroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.SetCursorPosition(xA, y8);
             Console.BackgroundColor = ConsoleColor.Black;
-            string black = "+";
-            Console.Write("{0,3}", black);
+            Console.Write("{0,3}", blackCh);
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(xB, y8);
             Console.BackgroundColor = ConsoleColor.White;
-            string white = "-";
             Console.Write("{0,3}", white);
 
-            Console.ForegroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(xC, y8);
             Console.BackgroundColor = ConsoleColor.Black;
-            black = "+";
-            Console.Write("{0,3}", black);
+            Console.Write("{0,3}", whiteCh);
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(xD, y8);
             Console.BackgroundColor = ConsoleColor.White;
-            white = "-";
             Console.Write("{0,3}", white);
 
             Console.ForegroundColor = ConsoleColor.Black;
             Console.SetCursorPosition(xE, y8);
             Console.BackgroundColor = ConsoleColor.Black;
-            black = "+";
             Console.Write("{0,3}", black);
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(xF, y8);
             Console.BackgroundColor = ConsoleColor.White;
-            white = "-";
             Console.Write("{0,3}", white);
 
             Console.ForegroundColor = ConsoleColor.Black;
             Console.SetCursorPosition(xG, y8);
             Console.BackgroundColor = ConsoleColor.Black;
-            black = "+";
             Console.Write("{0,3}", black);
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(xH, y8);
             Console.BackgroundColor = ConsoleColor.White;
-            white = "-";
             Console.Write("{0,3}", white);
 
             
