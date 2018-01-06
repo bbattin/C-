@@ -19,19 +19,23 @@ namespace Checkers
             int oldX = Console.CursorLeft;
             int oldY = Console.CursorTop;
 
-            UI.PrintField(xConst, yConst, sizeCell);
+            //UI.PrintField(xConst, yConst, sizeCell);
 
-            UI.PrintWhiteChec(xConst, yConst + 3);
+            //UI.PrintWhiteChec(xConst, yConst + 3);
 
-            UI.PrintBlackChec(xConst + 9, yConst);
+            //UI.PrintBlackChec(xConst + 9, yConst);
 
-            UI.PrintBlackKing(xConst + 15, yConst + 12);
+            //UI.PrintBlackKing(xConst + 15, yConst + 12);
 
-            UI.PrintWhiteKing(xConst + 9, yConst + 12);
+            //UI.PrintWhiteKing(xConst + 9, yConst + 12);
 
-            UI.PrintSelect(xConst + 6, yConst + 3, sizeCell);
+            //UI.PrintSelect(xConst + 6, yConst + 3, sizeCell);
 
+            Board Pole = new Board();
+            Pole.PrintCells();
 
+            Board Figs = new Board();
+            Figs.PrintFigs();
 
 
             Console.ReadKey();
