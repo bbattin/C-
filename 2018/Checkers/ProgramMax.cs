@@ -10,7 +10,7 @@ namespace ConsoleOutputTest
     {
         static void Main(string[] args)
         {
-            Field Pole = new Field();
+            Board Pole = new Board();
             Pole.Print();
 
             Console.ReadKey();
@@ -38,20 +38,21 @@ namespace ConsoleOutputTest
 
     public class Cell
     {
+        public int x, y;
         public CellColor Color;
         public Figure Fig;
     }
 
-    public class Field
+    public class Board
     {
 
         Cell[,] Cells;
 
         Figure[] WhiteFigs = new Figure[12];
         Figure[] BlackFigs = new Figure[12];
-        
+
         // конструктор
-        public Field()
+        public Board()
         {
             Init();
         }
@@ -70,6 +71,8 @@ namespace ConsoleOutputTest
                 {
                     Cell OneCell = new Cell();
 
+                    OneCell.x = i;
+                    OneCell.y = j;
                     // белые
                     if ((i % 2 == 0 && j % 2 == 0) || (i % 2 == 1 && j % 2 == 1))
                     {
@@ -124,15 +127,36 @@ namespace ConsoleOutputTest
                     // белые
                     if (Cells[i, j].Color == CellColor.White)
                     {
-                        // PrintWhite(Field[i, j]);
+                        PrintWhite(Cells[i, j]);
                     }
                     else
                     {
-                        // PrintBlack(Field[i, j]);
+                        PrintBlack(Cells[i, j]);
                     }
                 }
             }
         }
+
+
+        public void PrintWhite(Cell OneCell) => PrintOneCell(OneCell, ConsoleColor.Gray);
+
+        public void PrintBlack(Cell OneCell) => PrintOneCell(OneCell, ConsoleColor.DarkGray);
+
+        public void PrintOneCell(Cell OneCell, ConsoleColor Col)
+        {
+            int size = 3;
+            int x = 3;
+            int y = 3;
+
+            int xout = x + OneCell.x * size;
+            int yout = y + OneCell.y * size;
+            Console.BackgroundColor = Col;
+            Console.SetCursorPosition(xout, yout);
+            Console.Write(" ");
+        }
+
+
+
 
     }
 }
